@@ -67,7 +67,6 @@ const movieSchema = new mongoose.Schema(
     },
     movieId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'movieIdOutside',
       required: true,
     },
   },

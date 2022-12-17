@@ -1,22 +1,31 @@
 const { celebrate, Joi } = require('celebrate');
 
-/* const schemeObjectId = Joi.string().alphanum().hex().length(24); */
+const schemeObjectId = Joi.string().alphanum().hex().length(24);
 const schemeEmail = Joi.string().email();
-/* const schemeUrl = Joi.string()
+const schemeUrl = Joi.string()
   .pattern(/^https?:\/\/(www.)?[a-zA-Z0-9-]+\.[a-zA-Z0-9]+[\w-._~:/?#[\]@!$'()*+,;=]*#?/);
- */
-/* const cardBodyValidator = celebrate({
+
+const movieValidator = celebrate({
   body: Joi.object().keys({
-    name: Joi.string().required().min(2).max(30),
-    link: schemeUrl.required(),
+    nameRU: Joi.string().required(),
+    nameEn: Joi.string().required(),
+    country: Joi.string().required(),
+    director: Joi.string().required(),
+    duration: Joi.number().required(),
+    year: Joi.string().required(),
+    description: Joi.string().required(),
+    image: schemeUrl.required(),
+    trailerLink: schemeUrl.required(),
+    thumbnail: schemeUrl.required(),
+    movieId: schemeObjectId.required(),
   }),
 });
 
-const cardIdValidator = celebrate({
+const idValidator = celebrate({
   params: Joi.object().keys({
-    cardId: schemeObjectId.required(),
+    id: schemeObjectId.required(),
   }),
-}); */
+});
 
 /* const userAvatarValidator = celebrate({
   body: Joi.object().keys({
@@ -50,4 +59,6 @@ module.exports = {
   userLoginValidator,
   userBodyValidator,
   userValidator,
+  movieValidator,
+  idValidator,
 };

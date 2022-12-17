@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const usersRouter = require('./users');
-/* const moviesRouter = require('./movies'); */
+const moviesRouter = require('./movies');
 const auth = require('../middlewares/auth');
 const {
   userBodyValidator,
@@ -16,6 +16,7 @@ router.post('/signin', userLoginValidator, login);
 router.post('/signup', userBodyValidator, createUser);
 /* маршрутизация */
 router.use('/users', auth, usersRouter);
+router.use('/movies', auth, moviesRouter);
 
 router.use('*', auth, (req, res, next) => {
   next(new NotFoundError(errorMessages.incorrectRoute));

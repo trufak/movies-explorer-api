@@ -19,7 +19,7 @@ const getMovies = (req, res, next) => {
 };
 
 const createMovie = (req, res, next) => {
-  Movie.create(req.body)
+  Movie.create({ ...req.body, owner: req.user._id })
     .then((document) => {
       const movie = document.toObject();
       res.send({ data: movie });

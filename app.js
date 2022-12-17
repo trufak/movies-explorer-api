@@ -31,3 +31,5 @@ app.use(errorLogger);
 app.use(errorsCelebrate());
 /* обработка ошибок */
 app.use(errors);
+
+module.exports = app;

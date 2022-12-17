@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
-/* const bcrypt = require('bcryptjs'); */
-/* const errorMessages = require('../utils/errorMessages');
-const UnauthorizedError = require('../errors/UnauthorizedError'); */
+const bcrypt = require('bcryptjs');
+const errorMessages = require('../utils/errorMessages');
+const UnauthorizedError = require('../errors/UnauthorizedError');
 
 const userSchema = new mongoose.Schema(
   {
@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema(
   { versionKey: false },
 );
 
-/* userSchema.statics.findUserByCredentials = function _f(email, password) {
+userSchema.statics.findUserByCredentials = function _f(email, password) {
   return this.findOne({ email }).select('+password')
     .then((document) => {
       if (!document) {
@@ -49,6 +49,6 @@ const userSchema = new mongoose.Schema(
           return user;
         });
     });
-}; */
+};
 
 module.exports = mongoose.model('user', userSchema);
