@@ -8,7 +8,7 @@
 
 * Дипломный проект показывает какие крутые выпускники Практикума.
 * IP: 158.160.40.117
-* Backend: http://diplom.trufakin.nomoredomains.club/
+* Backend: https://api.diplom.trufakin.nomoredomains.club
 * GH: https://github.com/trufak/movies-explorer-api
 
 **Технологии**

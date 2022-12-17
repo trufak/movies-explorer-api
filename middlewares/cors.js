@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://mesto.trufakin.nomoredomains.club',
-  'http://mesto.trufakin.nomoredomains.club',
+  'https://diplom.trufakin.nomoredomains.club',
+  'http://diplom.trufakin.nomoredomains.club',
 ];
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
