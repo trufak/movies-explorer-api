@@ -10,8 +10,13 @@ const router = require('./routes/index');
 const limiter = require('./middlewares/limiter');
 
 const app = express();
+const { MONGOPATH, NODE_ENV } = process.env;
 
-mongoose.connect('mongodb://127.0.0.1:27017/bitfilmsdb');
+mongoose.connect(
+  NODE_ENV === 'production'
+    ? MONGOPATH
+    : 'mongodb://127.0.0.1:27017/moviesdb',
+);
 
 /* подключение helmet */
 app.use(helmet());
