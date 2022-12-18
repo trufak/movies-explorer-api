@@ -20,14 +20,14 @@ mongoose.connect(
 
 /* подключение helmet */
 app.use(helmet());
-/* ограничение количества запросов */
-app.use(limiter);
 /* выставление заголовков cors */
 app.use(cors);
 /* парсинг тела запроса */
 app.use(bodyParser.json());
 /* логирование запросов */
 app.use(requestLogger);
+/* ограничение количества запросов */
+app.use(limiter);
 /* подключение роутеров */
 app.use(router);
 /* логирование ошибок */
