@@ -8,7 +8,7 @@ const schemeUrl = Joi.string()
 const movieValidator = celebrate({
   body: Joi.object().keys({
     nameRU: Joi.string().required(),
-    nameEn: Joi.string().required(),
+    nameEN: Joi.string().required(),
     country: Joi.string().required(),
     director: Joi.string().required(),
     duration: Joi.number().required(),
@@ -17,7 +17,7 @@ const movieValidator = celebrate({
     image: schemeUrl.required(),
     trailerLink: schemeUrl.required(),
     thumbnail: schemeUrl.required(),
-    movieId: schemeObjectId.required(),
+    movieId: Joi.number().required(),
   }),
 });
 

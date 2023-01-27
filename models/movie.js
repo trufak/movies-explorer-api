@@ -6,7 +6,7 @@ const movieSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    nameEn: {
+    nameEN: {
       type: String,
       required: true,
     },
@@ -66,7 +66,7 @@ const movieSchema = new mongoose.Schema(
       required: true,
     },
     movieId: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Number,
       required: true,
     },
   },
